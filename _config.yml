@@ -1,0 +1,8 @@
+title: Hobby Homepage
+tagline: A homepage dedicated to some of my hobby projects.
+description: A homepage dedicated to some of my hobby projects.
+plugins:
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+markdown: kramdown
