@@ -4,4 +4,6 @@ title: About
 ---
 # About
 
-Hi, my name is Conrad. This site is dedicated to my hobby electronic projects. Feel free to contact me via [e-mail](mailto:c.gstoettner@me.com).
+Hi, my name is Conrad. This website is dedicated to some of my hobby projects - mostly electronics projects.
+
+If you have questions about any of my projects, feel free to contact me via [e-mail](mailto:c.gstoettner@me.com). Feedback is also greatly appreciated.

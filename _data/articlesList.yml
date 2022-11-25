@@ -1,5 +1,35 @@
-- title: Example Categorie
+- title: Audio Amplifiers
   subfolderitems:
-    - name: Example Article
-      url: /articles/exampleCategorie/exampleArticle.html
-      path: articles/exampleCategorie/exampleArticle.md
+    - name: Vacuum Tube Amplifier
+      url: /articles/audioAmplifiers/vacuumTubeAmplifier.html
+      path: articles/audioAmplifiers/vacuumTubeAmplifier.md
+
+- title: High Voltage
+  subfolderitems:
+    - name: Simple Solid State Tesla Coil
+      url: /articles/highVoltage/simpleSolidStateTeslaCoil.html
+      path: articles/highVoltage/simpleSolidStateTeslaCoil.md
+
+- title: Induction Heating
+  subfolderitems:
+    - name: ZVS Circuit
+      url: /articles/inductionHeating/zvsCircuit.html
+      path: articles/inductionHeating/zvsCircuit.md
+
+- title: Microcontroller Projects
+  subfolderitems:
+    - name: Balancing Robot
+      url: /articles/microcontrollerProjects/balancingRobot.html
+      path: articles/microcontrollerProjects/balancingRobot.md
+    - name: CO2 Monitor
+      url: /articles/microcontrollerProjects/co2Monitor.html
+      path: articles/microcontrollerProjects/co2Monitor.md
+
+- title: Uncategorized
+  subfolderitems:
+    - name: H-Bridge Current Sensing
+      url: /articles/uncategorized/hBridgeCurrentSensing.html
+      path: articles/uncategorized/hBridgeCurrentSensing.md
+    - name: Pulse Induction Metal Detector
+      url: /articles/uncategorized/pulseInductionMetalDetector.html
+      path: articles/uncategorized/pulseInductionMetalDetector.md

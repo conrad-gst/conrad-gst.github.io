@@ -2,6 +2,7 @@
 layout: default
 title: Home
 ---
-# Welcome!
-
-Some text.
+# Welcome to my Hobby Homepage!
+<figure>
+    <img src="/assets/images/titlepage.JPG" alt="MISSING IMAGE" style="width:100%"/>
+</figure>
