@@ -9,7 +9,7 @@ Consider a H-bridge as in Figure 1 below. Via PWM, an arbitrary voltage in the r
 
 <figure>
     <img src="/assets/images/h_bridge.jpg" alt="MISSING IMAGE" style="width:100%"/>
-    <figcaption>Figure 1: H-bridge.</figcaption>
+    <figcaption class="figcaption">Figure 1: H-bridge.</figcaption>
 </figure>
 
 ## Current Sensing via Shunt Resistor
@@ -18,7 +18,7 @@ One way to measure a current is to measure the voltage drop over a shunt resisto
 
 <figure>
     <img src="/assets/images/h_bridge_shunt.jpg" alt="MISSING IMAGE" style="width:100%"/>
-    <figcaption>Figure 2: H-bridge with shunt resistor.</figcaption>
+    <figcaption class="figcaption">Figure 2: H-bridge with shunt resistor.</figcaption>
 </figure>
 
 However, conditioning this voltage signal such that it can be measured with the AD-converter of a microcontroller is not a straight forward task. We are interested in the voltage drop $$V_{diff}$$ across the shunt resistor. Therefore, a differential amplifier is needed. However, the differential amplifier must be able to handle a large common mode voltage. Due to the inductive nature of the load, the voltage at node $$A$$ can even drop below the ground potential (by the voltage drop of the body diode of the MOSFET M2) and exceed the bus voltage $$V_B$$ (by the forward voltage drop of the body diode of the MOSFET M1). (If we are dealing with a H-bridge or three half bridges as in three phase applications or some other configuration does not matter. In any case, measuring the current involves the conditioning of a small differential voltage under the presence of a large common mode voltage.) There exist highly specialized differential amplifiers designed specifically for current sensing applications in PWM controlled power electronic circuits which can handle this, e.g. the [INA240](https://www.ti.com/lit/ds/symlink/ina240.pdf?ts=1661835487061&ref_url=https%253A%252F%252Fwww.google.com%252F), which can handle common mode voltages from $$-4\,\mathrm{V}$$ to $$80\,\mathrm{V}$$ while only supplied by $$5\,\mathrm{V}$$ and which recovers from common mode transients within several hundred nanoseconds. However, this and comparable chips do not seem to be very common among hobbyists. I am not aware of commonly available breakout boards for this chip. The same applies to comparable current sense amplifiers like e.g. the [MAX40056F](https://www.maximintegrated.com/en/products/analog/amplifiers/MAX40056F.html#modalDatasheet)
@@ -27,7 +27,7 @@ Other differential amplifiers which can handle very large common mode voltages a
 
 <figure>
     <img src="/assets/images/diffamp_v1.jpg" alt="MISSING IMAGE" style="width:100%"/>
-    <figcaption>Figure 3: Differential amplifier Version 1.</figcaption>
+    <figcaption class="figcaption">Figure 3: Differential amplifier Version 1.</figcaption>
 </figure>
 
 Let us analyze this circuit in regard to differential gain and the maximal admissible common mode voltage. The voltage at the inputs of $$OP_1$$ must not exceed its supply voltage $$V_s$$ and must not drop below the ground potential $$0\,V$$. Opamps which can handle that are called rail-to-rail input amplifiers (similar to rail-to-rail output amplifiers, whose output voltage swing (almost) includes the supply rails). However, not all opamps are rail-to-rail input amplifiers, in which case an extra margin of typically several hundred $$\mathrm{mV}$$ up to a few $$\mathrm{V}$$ to the supply rails has to be taken into account. In the following, this margin is denoted $$V_m$$. 
@@ -79,7 +79,7 @@ Another problem of this circuit is its common mode gain. Ideally, i.e. with perf
 
 <figure>
     <img src="/assets/images/diffamp_v1_mismatch.jpg" alt="MISSING IMAGE" style="width:100%"/>
-    <figcaption>Figure 4: Differential amplifier Version 1 - with resistor mismatch.</figcaption>
+    <figcaption class="figcaption">Figure 4: Differential amplifier Version 1 - with resistor mismatch.</figcaption>
 </figure>
 
 A mismatch of the ratios $$R_2/R_1$$ and $$R_2'/R_1'$$ causes a common mod gain. Let $$R_2'/R_1'=(1+\epsilon)R_2/R_1$$, i.e. for $$\epsilon=0$$ the resistor ratios are perfectly matched, the larger $$\epsilon$$ the worse is the match. For the above circuit one derives
@@ -120,7 +120,7 @@ Consequently, the ratio $$R_2/R_1$$ and thus the $$CMMR$$ can be improved signif
 
 <figure>
     <img src="/assets/images/diffamp_v2.jpg" alt="MISSING IMAGE" style="width:100%"/>
-    <figcaption>Figure 5: Differential amplifier Version 2.</figcaption>
+    <figcaption class="figcaption">Figure 5: Differential amplifier Version 2.</figcaption>
 </figure>
 
 For the above circuit, one derives the following formula for the output voltage
@@ -135,7 +135,7 @@ Taking into account a mismatch of the resistors, where $$R_2'/R_1'=(1+\epsilon_1
 
 <figure>
     <img src="/assets/images/diffamp_v2_mismatch.jpg" alt="MISSING IMAGE" style="width:100%"/>
-    <figcaption>Figure 6: Differential amplifier Version 2 - with resistor mismatch and offset voltage.</figcaption>
+    <figcaption class="figcaption">Figure 6: Differential amplifier Version 2 - with resistor mismatch and offset voltage.</figcaption>
 </figure>
 
 one derives
@@ -167,7 +167,7 @@ For testing the current sensing amplifier in practice, I have set up a test circ
 
 <figure>
     <img src="/assets/images/diffamp_v2_testsetup.jpg" alt="MISSING IMAGE" style="width:100%"/>
-    <figcaption>Figure 7: Experimental setup.</figcaption>
+    <figcaption class="figcaption">Figure 7: Experimental setup.</figcaption>
 </figure>
 
 The actual current sensing amplifier is set up according to the circuit in Figure 5 using $$0.1\%$$ resistors with nominal values $$R_1=10\,\mathrm{k\Omega}$$, $$R_2=30\,\mathrm{k\Omega}$$, $$R_3=30\,\mathrm{k\Omega}$$, $$R_4=10\,\mathrm{k\Omega}$$. Together with $$R_{shunt}=0.5\,\Omega$$, this results in a sensitivity of $$0.375\,\mathrm{V/A}$$. The PWM signal comes from a function generator. In one of the two half bridges, which together form the H-bridge, the low-side MOSFET is all the time on and the high-side MOSFET all the time off. The other half bridge is feed by the PWM signal. I tested $$10\,\mathrm{kHz}$$ and $$50\,\mathrm{kHz}$$ with $$20\%$$ duty cycle in each case. The measurement results are presented below.
@@ -175,13 +175,13 @@ The actual current sensing amplifier is set up according to the circuit in Figur
 In Figure 8 below, you can see the measurement results for a PWM frequency of $$10\,\mathrm{kHz}$$ with no load connected and no filtering (i.e. no capacitor in parallel to $$R_4$$). The top trace is $$V_{out}-V_{ref}'$$ (which here should ideally be zero throughout) and the bottom trace is $$V_{in1}$$ (i.e. the common mode input voltage of the current sense amplifier). Note that the vertical setting for both channels is different. The common mode gain of the amplifier is too low to be visible with the used vertical setting, however, the switching transients of the PWM are visible in the output signal.
 <figure>
     <img src="/assets/images/10kHz_no_current_no_filter.png" alt="MISSING IMAGE" style="width:100%"/>
-    <figcaption>Figure 8: CH1: Vout-Vref' | CH2: Vin1 | 10 kHz PWM | no load | no filter.</figcaption>
+    <figcaption class="figcaption">Figure 8: CH1: Vout-Vref' | CH2: Vin1 | 10 kHz PWM | no load | no filter.</figcaption>
 </figure>
 
 Figure 9 below shows the measurement results with the load connected. One can clearly see that the current through the load is rising during the on-time of the PWM and falling during the rest of the PWM period (during this time, the load is shorted via the two low-side MOSFETS of the H-bridge).
 <figure>
     <img src="/assets/images/10kHz_current_no_filter.png" alt="MISSING IMAGE" style="width:100%"/>
-    <figcaption>Figure 9: CH1: Vout-Vref' | CH2: Vin1 | 10 kHz PWM | with load | no filter.</figcaption>
+    <figcaption class="figcaption">Figure 9: CH1: Vout-Vref' | CH2: Vin1 | 10 kHz PWM | with load | no filter.</figcaption>
 </figure>
 
 Figure 10 below shows the measurement results with the load connected and $$5\,\mathrm{nF}$$ capacitance connected in parallel to $$R_4$$. This results in a first order low pass filtering of the output signal with a cutoff frequency of approximately $$4.2\,\mathrm{kHz}$$. The this way averaged output signal $$V_{out}-V_{ref}'$$ is approximately $$0.55\,\mathrm{V}$$, corresponding to an average load current of $$0.55\,\mathrm{V}/(0.375\,\mathrm{V/A})=1.47\,\mathrm{A}$$. Measuring the voltage drop across the shunt resistor with a multimeter gave me a reading of $$0.720\,\mathrm{V}$$, corresponding to an average current of $$0.72\,\mathrm{V}/R_{shunt}=1.44\,\mathrm{A}$$. The relative error between these two measurements is thus only approximately $$2\%$$.
@@ -190,12 +190,12 @@ In Figure 11 below, the setup is exactly the same, except that the PWM frequency
 
 <figure>
     <img src="/assets/images/10kHz_current_filter.png" alt="MISSING IMAGE" style="width:100%"/>
-    <figcaption>Figure 10: CH1: Vout-Vref' | CH2: Vin1 | 10 kHz PWM | with load | with filter.</figcaption>
+    <figcaption class="figcaption">Figure 10: CH1: Vout-Vref' | CH2: Vin1 | 10 kHz PWM | with load | with filter.</figcaption>
 </figure>
 
 <figure>
     <img src="/assets/images/50kHz_current_filter.png" alt="MISSING IMAGE" style="width:100%"/>
-    <figcaption>Figure 11: CH1: Vout-Vref' | CH2: Vin1 | 50 kHz PWM | with load | with filter.</figcaption>
+    <figcaption class="figcaption">Figure 11: CH1: Vout-Vref' | CH2: Vin1 | 50 kHz PWM | with load | with filter.</figcaption>
 </figure>
 
 ### Conclusion
@@ -207,5 +207,5 @@ Besides measuring currents via the voltage drop over a shunt resistor, currents 
 
 <figure>
     <img src="/assets/images/hall_current_sensors_open_loop_closed_loop.jpg" alt="MISSING IMAGE" style="width:100%"/>
-    <figcaption>Figure 12: Open loop and closed loop Hall effect based current sensor principle.</figcaption>
+    <figcaption class="figcaption">Figure 12: Open loop and closed loop Hall effect based current sensor principle.</figcaption>
 </figure>

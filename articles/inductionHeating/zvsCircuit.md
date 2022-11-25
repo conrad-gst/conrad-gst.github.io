@@ -50,33 +50,16 @@ The circuit is built such that the tank circuit can easily be replaced. Another 
 ## Test Results
 With both tank circuits, a supply voltage of $$12\,\mathrm{V}$$ suffices for reliable oscillation. With my old analog Tektronix 2215A oscilloscope, I measured an oscillation frequency of $$71.4\,\mathrm{kHz}$$ with the first tank circuit, and $$250.0\,\mathrm{kHz}$$ with the second one. The oscillation frequency varies only very slightly with the supply voltage. 
 
-
-<!-- The current draw for different supply voltages can be seen in the table below:
-
-<table>
-    <tr>
-        <th> Supply Voltage </th>
-        <th> Current Draw - Tank Circuit 1 </th>
-        <th> Current Draw - Tank Circuit 2 </th>
-    </tr>
-    <tr>
-        <td> 12 </td>
-        <td> abc </td>
-        <td> abc </td>
-    </tr>
-</table>
--->
-
 In the image below, the voltage across the tank circuit (the first tank circuit, i.e. the one with the lower resonance frequency) for a supply voltage of $$20\,\mathrm{V}$$ resp. $$37\,\mathrm{V}$$ can be seen. The current drawn from the power supply is $$0.77\,\mathrm{A}$$ resp. $$1.45\,\mathrm{A}$$, corresponding to a power dissipation of $$15.4\,\mathrm{W}$$ resp. $$53.7\,\mathrm{W}$$. Neither the MOSFETs nor the capacitors heat up significantly, so it seem like most of the power is dissipated in the coil, which indeed heats up a lot. The voltage across the tank circuit seems to have a relatively clean sinusoid shape, with slight distortions at the zero crossings. The amplitude is approximately $$63\,\mathrm{V}$$, resp. $$115\,\mathrm{V}$$, from which the amplitude of the current flowing in the tank circuit follows as approximately $$18\,\mathrm{A}$$ resp. $$33\,\mathrm{A}$$.
 
 <figure>
     <img src="/assets/images/zvs_oscilloscope_20V_supply.jpg" alt="MISSING IMAGE" style="width:100%"/>
-    <figcaption>Vertical setting: 20 V/Div | Horizontal setting: 2 us/Div.</figcaption>
+    <figcaption class="figcaption">Vertical setting: 20 V/Div | Horizontal setting: 2 us/Div.</figcaption>
 </figure>
 
 <figure>
     <img src="/assets/images/zvs_oscilloscope_37V_supply.jpg" alt="MISSING IMAGE" style="width:100%"/>
-    <figcaption>Vertical setting: 50 V/Div | Horizontal setting: 2 us/Div.</figcaption>
+    <figcaption class="figcaption">Vertical setting: 50 V/Div | Horizontal setting: 2 us/Div.</figcaption>
 </figure>
 
 With the second tank circuit, the voltage waveform is more distorted at the zero crossings. The MOSFETs also heat up much more, but the coil is again the part which heats up the most.

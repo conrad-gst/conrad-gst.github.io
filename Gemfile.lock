@@ -258,6 +258,7 @@ DEPENDENCIES
   github-pages (~> 227)
   jekyll-seo-tag
   jekyll-sitemap
+  rouge
 
 BUNDLED WITH
    2.3.22
