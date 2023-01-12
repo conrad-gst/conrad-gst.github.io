@@ -24,6 +24,9 @@
     - name: CO2 Monitor
       url: /articles/microcontrollerProjects/co2Monitor.html
       path: articles/microcontrollerProjects/co2Monitor.md
+    - name: Field Oriented Control of a Stepper Motor
+      url: articles/microcontrollerProjects/stepperFOC.html
+      path: articles/microcontrollerProjects/stepperFOC.md
 
 - title: Uncategorized
   subfolderitems:
