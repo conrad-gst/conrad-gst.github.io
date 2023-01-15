@@ -11,8 +11,10 @@ body {
   grid-area: header;
   background-color: rgb(64, 64, 197);
   text-align: center;
-  padding: 20px;
-  font-size: 30px;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  height: 80px;
 }
 
 .main {
@@ -29,7 +31,7 @@ body {
   background-color: rgb(64, 64, 197);
   text-align: center;
   padding: 20px;
-  font-size: 30px;
+  height: 80px;
 }
 
 .grid-container {
@@ -38,7 +40,7 @@ body {
     'header'
     'main'
     'footer';
-  gap: 20px;
+  gap: 5px;
   background-color: white;
   padding: 0px;
   min-width: 500px;
@@ -56,15 +58,14 @@ a {
 }
 
 .header a {
-  margin-left: 100;
-  float: left;
+  float: center;
   color: white;
   text-align: center;
   padding: 10px;
   text-decoration: none;
   font-size: 20px;
   font-weight: bold;
-  line-height: 35px;
+  line-height: 60px;
   border-radius: 4px;
 }
 
@@ -78,6 +79,21 @@ a {
   float: right;
 }
 
+.header-left {
+  float: left;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.header-image {
+  float: left;
+  height: 60px;
+}
+
 .footer-right {
   float: right;
 }
@@ -86,7 +102,7 @@ a {
   float: left;
   color: white;
   text-align: center;
-  padding: 10px;
+  padding: 12px;
   text-decoration: none;
   font-size: 14px;
   font-weight: bold;
@@ -100,7 +116,7 @@ a {
   text-decoration: none;
   font-size: 20px;
   font-weight: bold;
-  line-height: 35px;
+  line-height: 40px;
   border-radius: 4px;
 }
 
