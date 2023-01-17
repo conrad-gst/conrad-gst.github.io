@@ -25,7 +25,7 @@ I used an [Arduino Nano](https://store.arduino.cc/products/arduino-nano) in this
 For preventing the robot from tipping over and to make it move, the (rather heuristic) control strategy depicted in the block diagram below was used.
 
 <figure>
-    <img src="/assets/images/balancingRobot_control.jpeg" alt="MISSING IMAGE" style="width:100%"/>
+    <img src="/assets/images/balancing_robot_control_scheme.jpg" alt="MISSING IMAGE" style="width:100%"/>
     <figcaption></figcaption>
 </figure>
 
