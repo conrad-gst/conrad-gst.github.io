@@ -27,6 +27,9 @@
     - name: Field Oriented Control of a Stepper Motor
       url: articles/microcontrollerProjects/stepperFOC.html
       path: articles/microcontrollerProjects/stepperFOC.md
+    - name: Magnetic Levitation
+      url: articles/microcontrollerProjects/magneticLevitation.html
+      path: articles/microcontrollerProjects/magneticLevitation.md
 
 - title: Uncategorized
   subfolderitems:
