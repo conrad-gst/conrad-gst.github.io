@@ -9,6 +9,9 @@
     - name: Simple Solid State Tesla Coil
       url: /articles/highVoltage/simpleSolidStateTeslaCoil.html
       path: articles/highVoltage/simpleSolidStateTeslaCoil.md
+    - name: Plasma Speaker Based on TL494
+      url: /articles/highVoltage/plasmaSpeakerPWM.html
+      path: articles/highVoltage/plasmaSpeakerPWM.md
 
 - title: Induction Heating
   subfolderitems:
