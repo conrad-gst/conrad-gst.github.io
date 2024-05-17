@@ -34,11 +34,14 @@
       url: articles/microcontrollerProjects/magneticLevitation.html
       path: articles/microcontrollerProjects/magneticLevitation.md
 
-- title: Uncategorized
+- title: Theory
   subfolderitems:
     - name: H-Bridge Current Sensing
-      url: /articles/uncategorized/hBridgeCurrentSensing.html
-      path: articles/uncategorized/hBridgeCurrentSensing.md
+      url: /articles/theory/hBridgeCurrentSensing.html
+      path: articles/theory/hBridgeCurrentSensing.md
+
+- title: Uncategorized
+  subfolderitems:
     - name: Pulse Induction Metal Detector
       url: /articles/uncategorized/pulseInductionMetalDetector.html
       path: articles/uncategorized/pulseInductionMetalDetector.md
