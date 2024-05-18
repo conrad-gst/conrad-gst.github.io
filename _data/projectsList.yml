@@ -39,6 +39,9 @@
     - name: H-Bridge Current Sensing
       url: /articles/theory/hBridgeCurrentSensing.html
       path: articles/theory/hBridgeCurrentSensing.md
+    - name: IMU Sensor Fusion
+      url: /articles/theory/imuSensorFusion.html
+      path: articles/theory/imuSensorFusion.md
 
 - title: Uncategorized
   subfolderitems:
