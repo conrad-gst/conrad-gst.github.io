@@ -1,6 +1,6 @@
 ---
 layout: article
-title: IMU Sensor Fusion
+title: IMU Sensor Fusion 1D
 excerpt: In this article, the combination of accelerometer and gyroscope data for angle and angular velocity estimating via an observer is discussed.
 ---
 
